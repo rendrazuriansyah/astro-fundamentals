@@ -1,0 +1,50 @@
+---
+// mode static (proses build)
+// mode server (proses request terjadi dari user)
+// tidak dapat dijalankan di client browser
+// fetching data, akses database, akses API
+---
+
+<header>
+  <h1>Selamat Datang di Astro</h1>
+  <p>Temukan berita terbaru dan terpopuler hanya di Astro</p>
+  <button>Klik saya untuk melihat pesan</button>
+</header>
+
+<script>
+  const button = document.querySelector('button');
+  button.addEventListener('click', () => {
+    alert('Selamat datang di Astro!');
+  })
+</script>
+
+<style is:global>
+  header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+
