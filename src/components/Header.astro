@@ -3,6 +3,9 @@
 // mode server (proses request terjadi dari user)
 // tidak dapat dijalankan di client browser
 // fetching data, akses database, akses API
+console.log("ini script di header");
+const title: string = "ini titlee";
+const description: string = "ini descriptionn"
 ---
 
 <header>
@@ -11,11 +14,38 @@
   <button>Klik saya untuk melihat pesan</button>
 </header>
 
+<!-- script ini ga ke isolate, ga kayak local style css -->
 <script>
-  const button = document.querySelector('button');
-  button.addEventListener('click', () => {
-    alert('Selamat datang di Astro!');
-  })
+  // import '../scripts/header.js';
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      alert('Selamat datang di Astro!');
+    });
+  });
+</script>
+
+<script src="../scripts/header.js"></script>
+<script>
+  const message: string = 'ini contoh attach typescript'; 
+  console.log(message);
+</script>
+
+<!-- yg pke is:inline, ntar eksekusinya ga melalui bundling, langsung disisipin ke html -->
+
+<!-- cara akese js yang ada di public, ntar bisa ngerun 2x klo componentnya di panggil 2x  -->
+<script is:inline src="/global.js"></script>
+
+<!-- cara pke js cdn -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script>
+  console.log(dayjs().format('YYYY'));
+</script>
+
+<!-- cara pke script yg variablenya ada di component script -->
+<!-- ini dijalanin kyk is:inline secara default, saran aja: tetep ditambahin -->
+<script define:vars={{title, description}}>
+  console.log(title,', ', description);
 </script>
 
 <!-- local style -->

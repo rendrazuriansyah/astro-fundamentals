@@ -9,5 +9,10 @@ import MainLayout from "../layouts/MainLayout.astro";
 	<h1>Astro</h1>
 	<a href="/about">About</a>
 	<Footer name="Footer nya" />
+	<!-- walaupun diduplikat komponen tpi ttp script yang dijalanin bakal disatuin sebagai bundling -->
 	<Header slot="header"/>
+	<Header slot="header"/>
+
+	<!-- script yg ga ke isolate dari 1 component lain, ntar bakal kena ke komponen lainnya jga -->
+	<button>INI BUTTON</button>
 </MainLayout>
