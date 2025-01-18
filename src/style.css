@@ -1,0 +1,4 @@
+/* contoh style di file terpisah, yg nntinya harus diimport */
+button {
+	background-color: red;
+}

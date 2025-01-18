@@ -1,0 +1,7 @@
+/* contoh style di lokasi publik client, yg nntinya tinggal di panggil dengan link href pada head */
+h1 {
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+/* di file public file-file gabakal di optimize */
+/* klo di file folder src bakalan di optimize sama astro */
